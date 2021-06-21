@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Project Grand Auto Town Game Files - Crazy Games</title>
+    <link href="https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js" rel="preload" as="script" />
+    <link href="https://www.crazygames.com/game/project-grand-auto-town" rel="canonical" />
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="The game files for Project Grand Auto Town, a free browser game on CrazyGames.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Accept-CH" content="DPR" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" />
+    <style id="pacman-styles">
+        /* purple background */
+        body {
+            background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
+            background-position: center;
+            text-align: center;
+        }
+
+        /* for positioning of pacman loader */
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes rotate_preloadpacman_half_up {
+            0% {
+                transform: rotate(270deg);
+            }
+
+            50% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(270deg);
+            }
+        }
+
+        @keyframes rotate_preloadpacman_half_down {
+            0% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        @keyframes preloadpacman-balls {
+            75% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translate(-100px, -6.25px);
+            }
+        }
+
+        .preloadpacman {
+            position: relative;
+        }
+
+        .preloadpacman>div:nth-child(2) {
+            animation: preloadpacman-balls 1s -0.99s infinite linear;
+        }
+
+        .preloadpacman>div:nth-child(3) {
+            animation: preloadpacman-balls 1s -0.66s infinite linear;
+        }
+
+        .preloadpacman>div:nth-child(4) {
+            animation: preloadpacman-balls 1s -0.33s infinite linear;
+        }
+
+        .preloadpacman>div:nth-child(5) {
+            animation: preloadpacman-balls 1s 0s infinite linear;
+        }
+
+        .preloadpacman>div:first-of-type {
+            width: 0px;
+            height: 0px;
+            border-right: 25px solid transparent;
+            border-top: 25px solid #fff;
+            border-left: 25px solid #fff;
+            border-bottom: 25px solid #fff;
+            border-radius: 25px;
+            animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
+            position: relative;
+            left: -30px;
+        }
+
+        .preloadpacman>div:nth-child(2) {
+            width: 0px;
+            height: 0px;
+            border-right: 25px solid transparent;
+            border-top: 25px solid #fff;
+            border-left: 25px solid #fff;
+            border-bottom: 25px solid #fff;
+            border-radius: 25px;
+            animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
+            margin-top: -50px;
+            position: relative;
+            left: -30px;
+        }
+
+        .preloadpacman>div:nth-child(3),
+        .preloadpacman>div:nth-child(4),
+        .preloadpacman>div:nth-child(5),
+        .preloadpacman>div:nth-child(6) {
+            background-color: #fff;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            margin: 2px;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            transform: translate(0, -6.25px);
+            top: 25px;
+            left: 70px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="preloadpacman" id="pacman">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script type="text/javascript">
+        function loadScript(url, async, callback) {
+            var head = document.head;
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            if (async) {
+                script.async = true;
+            }
+            script.onreadystatechange = callback;
+            script.onload = callback;
+            head.appendChild(script);
+        }
+        var options = {
+            "loader": "5.4.x",
+            "loaderOptions": {
+                "module": {
+                    "memUrl": "https://files.crazygames.com/project-grand-auto-town/8/Release/KakayaRaznica.memgz",
+                    "codeUrl": "https://files.crazygames.com/project-grand-auto-town/8/Release/KakayaRaznica.jsgz",
+                    "dataUrl": "https://files.crazygames.com/project-grand-auto-town/8/Release/KakayaRaznica.datagz"
+                },
+                "unityLoaderUrl": "https://files.crazygames.com/project-grand-auto-town/8/Release/UnityLoader.js"
+            },
+            "author": "Artem Alexandrov",
+            "thumbnail": "https://images.crazygames.com/project-grand-auto-town.png?auto=format,compress&q=75&cs=strip&w=360",
+            "gameName": "Project Grand Auto Town",
+            "gameHttps": true,
+            "gameSlug": "project-grand-auto-town",
+            "gameStatus": "published",
+            "showAdOnExternal": "ALWAYS",
+            "showAdOnInternal": "DEFAULT",
+            "appStoreLink": "https://itunes.apple.com/ru/app/project-grand-city/id1423236601?l=uk&mt=8",
+            "playStoreLink": "https://play.google.com/store/apps/details?id=com.CL.ProjectOpenAutoCity",
+            "steamStoreLink": null,
+            "disableEmbedding": false,
+            "dollarRate": 0.8428611765499164,
+            "upvotes": 24076,
+            "downvotes": 2879,
+            "releaseDate": "2018-12-18",
+            "locale": "en_US",
+            "controls": {
+                "text": "<h3>Player controls</h3>\n<ul>\n<li>WASD or arrow keys to move</li>\n<li>Space bar to jump</li>\n<li>P to pause</li>\n<li>R to reload</li>\n<li>Left mouse button to shoot/attack</li>\n<li>Right mouse button to aim</li>\n<li>Mouse wheel to change weapon</li>\n<li>E to enter a car</li>\n</ul>\n\n<h3>Car controls</h3>\n<ul>\n<li>WASD or arrow keys to drive</li>\n<li>V to switch view</li>\n<li>Shift to use side view</li>\n</ul>"
+            },
+            "videoThumbnail": "https://videos.crazygames.com/project-grand-auto-town.mp4",
+            "video": {
+                "original": null,
+                "sizes": [{
+                    "width": 180,
+                    "height": 111,
+                    "location": "https://videos.crazygames.com/project-grand-auto-town.mp4"
+                }]
+            },
+            "totalSize": "201 MB",
+            "minTimeBetweenMidrollAdsInMs": 180000,
+            "minTimeBetweenRewardedAdsInMs": 5000,
+            "noMidrollAdInFirstMinutes": 3,
+            "noRewardedAdInFirstMinutes": 0,
+            "categoryEnSlug": "action",
+            "tagsEnSlugs": ["gta", "mafia", "3d", "webgl", "1-player", "car", "third-person-shooter", "gun", "weapon", "vehicle"],
+            "fullscreen": "ADDS_VALUE",
+            "orientation": null,
+            "category": "GTA",
+            "categoryLink": "https://www.crazygames.com/t/gta",
+            "gameLink": "https://www.crazygames.com/game/project-grand-auto-town",
+            "alternativeGames": [{
+                "category": "Driving",
+                "gameSlug": "crazy-car-stunts",
+                "gameName": "Crazy Car Stunts",
+                "rating": 9.3,
+                "thumbnail": "https://images.crazygames.com/crazy-car-stunts.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/crazy-car-stunts.mp4",
+                "gameLink": "https://www.crazygames.com/game/crazy-car-stunts",
+                "loader": "5.6.x"
+            }, {
+                "category": "Shooting",
+                "gameSlug": "downtown-1930s-mafia",
+                "gameName": "Downtown 1930s Mafia",
+                "rating": 9.2,
+                "thumbnail": "https://images.crazygames.com/downtown-1930s-mafia/20201106164225/downtown-1930s-mafia-cover?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/downtown-1930s-mafia/2/downtown-1930s-mafia-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/downtown-1930s-mafia",
+                "loader": "5.6.x"
+            }, {
+                "category": "Shooting",
+                "gameSlug": "bot-machines",
+                "gameName": "Assault Bots",
+                "rating": 8.9,
+                "thumbnail": "https://images.crazygames.com/games/bot-machines/cover-1614000389715.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/bot-machines/4/bot-machines-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/bot-machines",
+                "loader": "5.6.x"
+            }, {
+                "category": "Action",
+                "gameSlug": "amazing-strange-rope-police-vice-spider",
+                "gameName": "Amazing Strange Rope Police",
+                "rating": 8.9,
+                "thumbnail": "https://images.crazygames.com/games/amazing-strange-rope-police-vice-spider/cover-1583259570029.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/amazing-strange-rope-police-vice-spider/1/amazing-strange-rope-police-vice-spider-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/amazing-strange-rope-police-vice-spider",
+                "loader": "5.6.x"
+            }, {
+                "category": ".io",
+                "gameSlug": "shellshockersio",
+                "gameName": "Shell Shockers",
+                "rating": 9.2,
+                "thumbnail": "https://images.crazygames.com/shellshockersio/20200825110135/shellshockersio-cover?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/shellshockersio/2/shellshockersio-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/shellshockersio",
+                "loader": "iframe"
+            }, {
+                "category": "Shooting",
+                "gameSlug": "gangster-contract-mafia-wars",
+                "gameName": "Secret Agent James",
+                "rating": 9,
+                "thumbnail": "https://images.crazygames.com/games/gangster-contract-mafia-wars/cover-1602145804014.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/gangster-contract-mafia-wars/1/gangster-contract-mafia-wars-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/gangster-contract-mafia-wars",
+                "loader": "5.6.x"
+            }, {
+                "category": "Action",
+                "gameSlug": "mad-town-andreas-mafia-storie",
+                "gameName": "Mad Town Andreas: Mafia Storie",
+                "rating": 8.8,
+                "thumbnail": "https://images.crazygames.com/mad-town-andreas-mafia-storie/20200604134540/mad-town-andreas-mafia-storie-cover?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/mad-town-andreas-mafia-storie/1/mad-town-andreas-mafia-storie-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/mad-town-andreas-mafia-storie",
+                "loader": "5.6.x"
+            }, {
+                "category": "Shooting",
+                "gameSlug": "stickman-zombie-3d",
+                "gameName": "Stickman Zombie 3D",
+                "rating": 9.2,
+                "thumbnail": "https://images.crazygames.com/stickman-zombie-3d-cover?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/stickman-zombie-3d/1/stickman-zombie-3d-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/stickman-zombie-3d",
+                "loader": "5.6.x"
+            }, {
+                "category": "Action",
+                "gameSlug": "grand-action-simulator-new-york-car-gang",
+                "gameName": "Grand Action Simulator: New York Car Gang",
+                "rating": 9,
+                "thumbnail": "https://images.crazygames.com/grandactionsimulatornewyorkcargang.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/grand-action-simulator-new-york-car-gang.mp4",
+                "gameLink": "https://www.crazygames.com/game/grand-action-simulator-new-york-car-gang",
+                "loader": "5.6.x"
+            }, {
+                "category": "Shooting",
+                "gameSlug": "bullet-force-multiplayer",
+                "gameName": "Bullet Force",
+                "rating": 9.1,
+                "thumbnail": "https://images.crazygames.com/games/bullet-force-multiplayer/cover-1588010858655.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/bullet-force-multiplayer/8/bullet-force-multiplayer-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/bullet-force-multiplayer",
+                "loader": "5.6.x"
+            }],
+            "country": "IN",
+            "domainHasNoCMP": false
+        };
+        var SDK_READY = false;
+        var GF_READY = false;
+        var GF_LOAD_CALLED = false;
+        loadScript("https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js", true, function() {
+            Crazygames.load(options).then(function() {
+                var pacmanWrapper = document.getElementById('pacman');
+                var pacmanStyles = document.getElementById('pacman-styles');
+
+                if (pacmanWrapper && pacmanStyles) {
+                    pacmanWrapper.remove();
+                    pacmanStyles.remove();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
